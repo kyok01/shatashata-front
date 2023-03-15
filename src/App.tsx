@@ -1,8 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useItemRotator } from './useItemRotator';
+
+const items = ["茨城", "熊本", "鹿児島", 27]; // 配列の要素
 
 function App() {
+  const item = useItemRotator({arr: items, interval_ms:300});
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +23,7 @@ function App() {
         >
           Learn React
         </a>
+      <p>{item}</p>
       </header>
     </div>
   );
